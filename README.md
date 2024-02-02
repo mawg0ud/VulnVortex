@@ -2,7 +2,7 @@
 
 ## Overview
 
-Avalio is a penetration testing tool, this open-source project provides a simple yet extensible penetration testing tool written in C#. The tool is designed to simulate various aspects of a penetration test, including network scanning, vulnerability assessment, exploitation, and report generation.
+Avalio is a penetration testing tool, this open-source project provides a simple yet extensible penetration testing tool written in python. The tool is designed to simulate various aspects of a penetration test, including network scanning, vulnerability assessment, exploitation, and report generation.
 
 ## Key Features
 
