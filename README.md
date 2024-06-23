@@ -14,7 +14,7 @@ VulnVortex is a penetration testing tool, this open-source project provides a si
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/mawg0ud/Availio`
+1. Clone the repository: `git clone https://github.com/mawg0ud/VulnVortex`
 2. Open the project in your preferred python development environment.
 3. Customize the code to fit your specific penetration testing scenarios.
 4. Run the application and analyze the generated log and report files.
