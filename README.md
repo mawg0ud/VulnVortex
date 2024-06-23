@@ -1,8 +1,8 @@
-# Avalio - Penetration Testing Tool
+# VulnVortex - Penetration Testing Tool
 
 ## Overview
 
-Avalio is a penetration testing tool, this open-source project provides a simple yet extensible penetration testing tool written in python. The tool is designed to simulate various aspects of a penetration test, including network scanning, vulnerability assessment, exploitation, and report generation.
+VulnVortex is a penetration testing tool, this open-source project provides a simple yet extensible penetration testing tool written in python. The tool is designed to simulate various aspects of a penetration test, including network scanning, vulnerability assessment, exploitation, and report generation.
 
 ## Key Features
 
