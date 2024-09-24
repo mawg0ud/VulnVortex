@@ -37,7 +37,6 @@ class PenetrationTester:
     def assess_vulnerabilities(self):
         self.log("Assessing vulnerabilities...")
 
-        # Add your vulnerability assessment logic here
 
         self.log("Vulnerability assessment completed. Suggestions:")
         self.log("1. Update software to the latest versions.")
@@ -67,7 +66,7 @@ class PenetrationTester:
                 log_file.write(f"{result}\n")
 
 def main():
-    parser = argparse.ArgumentParser(description="Penetration Testing Tool")
+    parser = argparse.ArgumentParser(description="Penetration Tool")
     parser.add_argument("target_ip", help="Target IP address")
     parser.add_argument("start_port", type=int, help="Starting port for scanning")
     parser.add_argument("end_port", type=int, help="Ending port for scanning")
