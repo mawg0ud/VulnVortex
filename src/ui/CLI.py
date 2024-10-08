@@ -126,3 +126,37 @@ class CommandLineInterface:
         with open(results_file, 'w') as file:
             json.dump([result.to_json() for result in results], file, indent=4)
         logging.info(f"Exploitation results saved to {results_file}")
+
+    def run_report(self, target, results_file, format_type, output_file, template_file=None):
+        """
+        Generates a report based on the exploitation results.
+        """
+        logging.info(f"Generating {format_type.upper()} report for target {target} using results from {results_file}")
+        
+        if not os.path.exists(results_file):
+            logging.error(f"Results file {results_file} does not exist")
+            return
+
+        # Load results from file
+        with open(results_file, 'r') as file:
+            results_data = json.load(file)
+
+        # Initialize ReportGenerator and generate the report
+        report_generator = ReportGenerator(format_type=format_type, template_file=template_file)
+        report_content = report_generator.generate_report(results_data)
+        
+        # Save the report to a file
+        output_path = f"{output_file}.{format_type}"
+        if format_type == "pdf":
+            with open(output_path, 'wb') as file:
+                file.write(report_content)
+        else:
+            with open(output_path, 'w') as file:
+                file.write(report_content)
+        logging.info(f"Report saved to {output_path}")
+
+
+# Entry point for the CLI
+if __name__ == "__main__":
+    cli = CommandLineInterface()
+    cli.run()
