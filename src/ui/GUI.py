@@ -169,4 +169,64 @@ class VulnerabilityScannerGUI:
         self.vuln_scan_result_text.delete(1.0, tk.END)
         threading.Thread(target=self.run_vuln_scan, args=(target, self.scan_result_file)).start()
 
+    def run_vuln_scan(self, target, scan_file):
+        """
+        Perform the vulnerability scan and update the result in the GUI.
+        """
+        vuln_scanner = VulnerabilityScanner(target, scan_file)
+        vulnerabilities = vuln_scanner.detect_vulnerabilities()
+        for vuln in vulnerabilities:
+            self.vuln_scan_result_text.insert(tk.END, f"{vuln}\n")
 
+    def start_exploit(self):
+        """
+        Starts the exploitation on a separate thread.
+        """
+        target = self.exploit_target_entry.get()
+        if not target or not hasattr(self, 'vulns_file'):
+            messagebox.showwarning("Input Error", "Please select a target and load vulnerabilities file.")
+            return
+
+        self.exploit_result_text.delete(1.0, tk.END)
+        threading.Thread(target=self.run_exploit, args=(target, self.vulns_file)).start()
+
+    def run_exploit(self, target, vulns_file):
+        """
+        Perform the exploitation and update the result in the GUI.
+        """
+        with open(vulns_file, 'r') as file:
+            vulnerabilities = json.load(file)
+        
+        exploit_manager = ExploitManager(target, vulnerabilities)
+        results = exploit_manager.run_exploits()
+
+        for result in results:
+            self.exploit_result_text.insert(tk.END, f"{result.to_json()}\n")
+
+    def generate_report(self):
+        """
+        Starts the report generation process.
+        """
+        target = self.report_target_entry.get()
+        format_type = self.format_combobox.get()
+        if not target or not hasattr(self, 'results_file') or format_type == "Select Report Format":
+            messagebox.showwarning("Input Error", "Please select a target, load results, and choose a format.")
+            return
+
+        threading.Thread(target=self.run_generate_report, args=(target, self.results_file, format_type)).start()
+
+    def run_generate_report(self, target, results_file, format_type):
+        """
+        Generate the report and display the result.
+        """
+        with open(results_file, 'r') as file:
+            results_data = json.load(file)
+
+        report_generator = ReportGenerator(format_type)
+        report_content = report_generator.generate_report(results_data)
+
+        if format_type == "pdf":
+            output_file = f"report_{target}.pdf"
+            with open(output_file, 'wb') as f:
+                f.write(report_content)
+            self.report_result_text.insert(tk.END,
