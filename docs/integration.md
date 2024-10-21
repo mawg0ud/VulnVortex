@@ -30,28 +30,3 @@
      ```bash
      python CLI.py --target <IP> --output json --output-file results.json
      ```
-
----
-
-### `docs/usage_examples.md`
-
-#### **Usage Examples and Tutorials**
-
-**1. Basic Scanning Example:**
-   ```bash
-   python CLI.py --target 192.168.1.1 --ports 80,443
-   ```
-   - Output will show open ports, services, and basic scan information.
-
-**2. Vulnerability Detection Example:**
-   ```bash
-   python CLI.py --target 192.168.1.1 --vuln-scan
-   ```
-   - This runs a vulnerability scan on the target using detected services and ports.
-
-**3. Exploitation Example:**
-   ```bash
-   python CLI.py --target 192.168.1.1 --exploit
-   ```
-   - This attempts exploitation based on vulnerabilities found in the previous step.
-
