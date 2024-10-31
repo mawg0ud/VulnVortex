@@ -1,0 +1,4 @@
+2024-10-23 10:00:01 - INFO - Starting network scan on IP range: 192.168.1.0/24
+2024-10-23 10:05:12 - WARNING - High-severity vulnerability found on host 192.168.1.12: CVE-2021-12345
+2024-10-23 10:10:30 - ERROR - Failed to send email alert: SMTP server unreachable
+2024-10-23 10:12:45 - INFO - Scan completed. Report generated at reports/scan_report_20241023.html

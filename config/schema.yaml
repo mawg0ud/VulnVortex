@@ -1,0 +1,54 @@
+type: "object"
+properties:
+  network:
+    type: "object"
+    properties:
+      ip_range:
+        type: "string"
+        pattern: "^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$"
+      scan_ports:
+        type: "string"
+      proxy:
+        type: "object"
+        properties:
+          enabled:
+            type: "boolean"
+          address:
+            type: "string"
+    required: ["ip_range", "scan_ports", "proxy"]
+  vulnerability_database:
+    type: "object"
+    properties:
+      update_frequency:
+        type: "string"
+      source_url:
+        type: "string"
+    required: ["update_frequency", "source_url"]
+  reporting:
+    type: "object"
+    properties:
+      format:
+        type: "string"
+      output_directory:
+        type: "string"
+      email_settings:
+        type: "object"
+        properties:
+          enabled:
+            type: "boolean"
+          smtp_server:
+            type: "string"
+          smtp_port:
+            type: "integer"
+          email_from:
+            type: "string"
+          email_to:
+            type: "string"
+  notifications:
+    type: "object"
+    properties:
+      slack_webhook:
+        type: "string"
+  api_keys:
+    type: "object"
+required: ["network", "vulnerability_database", "reporting"]

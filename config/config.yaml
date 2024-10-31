@@ -1,0 +1,26 @@
+network:
+  ip_range: "192.168.1.0/24"
+  scan_ports: "22,80,443"
+  proxy:
+    enabled: true
+    address: "http://127.0.0.1:8080"
+
+vulnerability_database:
+  update_frequency: "weekly"
+  source_url: "https://vuln-database.org/api"
+
+reporting:
+  format: "html"
+  output_directory: "reports/"
+  email_settings:
+    enabled: true
+    smtp_server: "smtp.example.com"
+    smtp_port: 587
+    email_from: "scanner@example.com"
+    email_to: "admin@example.com"
+
+notifications:
+  slack_webhook: "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
+
+api_keys:
+  some_service: "YOUR_API_KEY"
