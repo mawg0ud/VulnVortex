@@ -34,7 +34,7 @@ This tool provides a versatile toolset for proactive network security management
 To set up **VulnVortex**, clone the repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/your-username/VulnVortex.git
+git clone https://github.com/mawg0ud/VulnVortex.git
 cd VulnVortex
 pip install -r requirements.txt
 ```
