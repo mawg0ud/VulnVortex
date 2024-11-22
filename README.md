@@ -97,18 +97,6 @@ The GUI supports network range input, real-time scan results, and options to sav
 ### Report Generation
 
 Reports are generated in HTML or plain-text formats, summarizing vulnerabilities, affected hosts, and severity. Reports are saved in the `reports/` directory by default.
-
-### Alert Management
-
-Configured alerts (email or Slack) notify administrators immediately upon finding high-severity vulnerabilities. These settings can be customized in `config.yaml`:
-
-```yaml
-reporting:
-  email_settings:
-    enabled: true
-    smtp_server: "smtp.example.com"
-    smtp_port: 587
-  slack_webhook: "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXX"
 ```
 
 ## Plugin Development
