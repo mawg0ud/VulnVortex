@@ -15,7 +15,6 @@ Welcome to the **VulnVortex User Guide**! This document will help you understand
    - [Interpreting Results](#interpreting-results)
 6. [Troubleshooting](#troubleshooting)
 7. [FAQs](#faqs)
-8. [Support and Contributions](#support-and-contributions)
 
 ---
 
@@ -138,10 +137,3 @@ A: Yes, it supports GitHub Actions and other CI/CD platforms.
 **Q: How can I extend VulnVortex?**  
 A: Refer to the [Developer Guide](developer_guide.md) for details on extending functionality.
 
----
-
-## **Support and Contributions**
-
-We welcome contributions! Please refer to [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines.
-
-For support, open an issue or reach out via email.
